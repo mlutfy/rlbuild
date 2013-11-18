@@ -1,0 +1,3 @@
+#!/bin/sh
+
+ip -6 addr add 2607:f2c0:f00f:2911::10 dev eth1
