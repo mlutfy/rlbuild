@@ -40,13 +40,24 @@ exec { "bidon_ca_mnt_point":
     path    => "/sbin/:/bin/:/usr/bin/",
 }
 
+group { 'jenkins':
+    ensure => 'present',
+    gid    => 1008,
+}
 
 user { 'jenkins':
     ensure => 'present',
-    uid    => '1008',
-    gid    => '1008',
+    uid    => 1008,
+    gid    => 1008,
 }
 
+file { "/home/jenkins/":
+    ensure => 'directory',
+    require => User['jenkins'],
+    owner => 'jenkins',
+    group => 'jenkins',
+    mode => '700',
+}
 
 file { "/home/jenkins/.ssh":
     ensure => 'directory',
