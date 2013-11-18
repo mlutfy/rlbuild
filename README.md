@@ -32,6 +32,7 @@ veewee vbox templates | grep Debian
 veewee vbox define 'my-debian-7.2' 'Debian-7.2.0-amd64-netboot' --workdir=~/repositories/veewee
 veewee vbox build 'my-debian-7.2'
 vagrant package --base my-debian-7.2 --output bgm-debian-7.box
+</pre>
 
 Add to vagrant:
 
