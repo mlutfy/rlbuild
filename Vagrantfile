@@ -60,6 +60,7 @@ Vagrant.configure("2") do |config|
 
   # [ML]
   config.vm.provision :puppet do |puppet|
+    puppet.module_path    = "modules"
     puppet.manifests_path = "manifests"
     puppet.manifest_file  = "init.pp"
     puppet.options = ['--verbose']
