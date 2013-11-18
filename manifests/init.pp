@@ -18,3 +18,7 @@ exec { "ipv6_network_bidon_ca":
     path    => "/sbin/:/bin/:/usr/bin/",
 }
 
+package { "git":
+    ensure => "installed"
+}
+
